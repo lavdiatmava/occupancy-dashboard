@@ -147,6 +147,10 @@ col2.metric("Max Occupancy", int(max_occ))
 col3.metric("Total Traffic", int(total_traffic))
 col4.metric("Avg Confidence", f"{avg_conf:.2f}")
 
+st.info("""
+Low confidence indicates inconsistent or incomplete sensor data.  
+Results should be interpreted as trends rather than exact counts.
+""")
 # Confidence interpretation
 if avg_conf < 0.3:
     st.error("Very low confidence — data may be unreliable")
